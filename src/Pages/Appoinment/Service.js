@@ -4,9 +4,9 @@ const Service = ({service,setTreatment}) => {
     const {name,slots}=service
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl text-center">
-            <div class="card-body ">
-                <h2 class=" text-center text-secondary text-2xl font-bold">{name}</h2>
+            <div className="card w-96 bg-base-100 shadow-xl text-center">
+            <div className="card-body ">
+                <h2 className=" text-center text-secondary text-2xl font-bold">{name}</h2>
                 <p>
                     {
                       slots.length>0 ?
@@ -16,12 +16,12 @@ const Service = ({service,setTreatment}) => {
                     }
                 </p>
                 <p>{slots.length} {slots.length>1?'Spaces':"Space"} available</p>
-                <div class="card-actions justify-center">
+                <div className="card-actions justify-center">
                 {/* <button onClick={()=>setTreatment(service)} disabled={slots.length===0} 
 
-                class="btn btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary">Book Appoinment</button> */}
+                className="btn btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary">Book Appoinment</button> */}
 
-                <label onClick={()=>setTreatment(service)} disabled={slots.length===0}  for="my-modal-6" class="btn modal-button btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary ">Book Appoinment</label>
+                <label onClick={()=>setTreatment(service)} disabled={slots.length===0}  for="my-modal-6" className="btn modal-button btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary ">Book Appoinment</label>
                 </div>
             </div>
             </div>

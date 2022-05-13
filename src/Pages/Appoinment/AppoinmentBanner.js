@@ -7,11 +7,11 @@ import 'react-day-picker/dist/style.css';
 
 const AppoinmentBanner = ({selected, setSelected}) => {
     return (
-        <div class="hero min-h-screen"style={{ backgroundImage: `url(${bg})`,
+        <div className="hero min-h-screen"style={{ backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',}} >
-        <div class="hero-content flex-col lg:flex-row-reverse">
-         <img  class="max-w-sm rounded-lg shadow-2xl" src={chair} alt="" />
+        <div className="hero-content flex-col lg:flex-row-reverse">
+         <img  className="max-w-sm rounded-lg shadow-2xl" src={chair} alt="" />
           <div>
           <DayPicker 
            mode="single"
