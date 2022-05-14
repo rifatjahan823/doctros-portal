@@ -21,7 +21,7 @@ const Service = ({service,setTreatment}) => {
 
                 className="btn btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary">Book Appoinment</button> */}
 
-                <label onClick={()=>setTreatment(service)} disabled={slots.length===0}  for="my-modal-6" className="btn modal-button btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary ">Book Appoinment</label>
+                <label onClick={()=>setTreatment(service)} disabled={slots.length===0}  htmlFor="my-modal-6" className="btn modal-button btn-primary modal-button uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary ">Book Appoinment</label>
                 </div>
             </div>
             </div>
