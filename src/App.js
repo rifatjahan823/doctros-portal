@@ -2,6 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
 import Appoinment from './Pages/Appoinment/Appoinment';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyAppoinment from './Pages/Dashboard/MyAppoinment';
+import MyReview from './Pages/Dashboard/MyReview';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
@@ -18,6 +21,12 @@ function App() {
       <Route path="/appointment" element={<RequireAuth>
         <Appoinment/>
       </RequireAuth>} />
+      <Route path="/dashboard" element={<RequireAuth>
+        <Dashboard/>
+      </RequireAuth>}>
+      <Route index element={<MyAppoinment/>}></Route>
+      <Route path="myreview"  element={<MyReview/>}></Route>
+      </Route >
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<SignUp/>} />
       </Routes>

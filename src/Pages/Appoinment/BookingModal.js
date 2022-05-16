@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const BookingModal = ({treatment,selected,setTreatment}) => {
+const BookingModal = ({treatment,selected,setTreatment,refetch}) => {
     const {name,slots,_id}=treatment
     const [user, loading, error] = useAuthState(auth);
     const formateDate = format(selected, 'PP')
@@ -37,6 +37,7 @@ const BookingModal = ({treatment,selected,setTreatment}) => {
          else{
             toast.error('you already booked')
          }
+         refetch()
         })
     }
 

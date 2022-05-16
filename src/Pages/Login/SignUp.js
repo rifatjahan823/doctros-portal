@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { useUpdateProfile } from 'react-firebase-hooks/auth'; 
+import useToken from '../../hooks/useToken';
 
 
 const SignUp = () => {
@@ -22,17 +23,23 @@ const SignUp = () => {
          //update user profile
          const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
          const navigate = useNavigate();
+        
+         const [token]=useToken(user || guser)
+
       //for from
       const { register, formState: { errors }, handleSubmit } = useForm();
       // Submit your data into Redux store
       const onSubmit =async data =>{
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName:data.name });
-        navigate('/appointment')
+      
       }; 
       if(loading||gloading ||updating){
         return <Loading></Loading>
       }  
+      if(token){
+        navigate('/appointment')
+    }
     return (
         <div className='flex justify-center items-center mt-12 h-screen'>
         <div className="card w-96 bg-base-100 shadow-xl">
