@@ -6,7 +6,7 @@ import DoctorRow from './DoctorRow';
 
 const MannageDoctors = () => {
     const [deltedoctore,setDeltedoctore]=useState(null)
-    const {data:doctor,isLoading,refetch}=useQuery('doctor',()=>fetch('http://localhost:5000/doctor',{
+    const {data:doctor,isLoading,refetch}=useQuery('doctor',()=>fetch('https://tranquil-wildwood-93962.herokuapp.com/doctor',{
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
         }

@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AddDoctor = () => {
     //user query 
-    const {data:services,isLoading}=useQuery('services',()=>fetch('http://localhost:5000/services')
+    const {data:services,isLoading}=useQuery('services',()=>fetch('https://tranquil-wildwood-93962.herokuapp.com/services')
     .then(res=>res.json()));
 
     const imgStorageKEY ='d6529dc3e2b5077433b72e6ff3596019';
@@ -43,7 +43,7 @@ const AddDoctor = () => {
                     img:img
                 }
                 //send to your database
-                fetch('http://localhost:5000/doctor',{
+                fetch('https://tranquil-wildwood-93962.herokuapp.com/doctor',{
                     method:"POST",
                     headers:{
                         'content-type':"application/json",

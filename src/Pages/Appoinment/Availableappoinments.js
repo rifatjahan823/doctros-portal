@@ -10,16 +10,16 @@ const Availableappoinments = ({selected, setSelected}) => {
     const [treatment,setTreatment]=useState([]);
     const formateDate = format(selected, 'PP')
     //use react query
-    const {data:Services,isLoading,refetch}=useQuery(['available',formateDate],()=>  fetch(`http://localhost:5000/available?date=${formateDate}`)
+    const {data:Services,isLoading,refetch}=useQuery(['available',formateDate],()=>  fetch(`https://tranquil-wildwood-93962.herokuapp.com/available?date=${formateDate}`)
   .then(res=>res.json()))
   if(isLoading){
       return<Loading></Loading>
   }
 
     // useEffect(()=>{
-    //     // for all service fetch(`http://localhost:5000/services`)
+    //     // for all service fetch(`https://tranquil-wildwood-93962.herokuapp.com/services`)
     //     //only which service available
-    //     fetch(`http://localhost:5000/available?date=${formateDate}`)
+    //     fetch(`https://tranquil-wildwood-93962.herokuapp.com/available?date=${formateDate}`)
     //     .then(res=>res.json())
     //     .then(data=>setServices(data))
     // },[formateDate,Services])

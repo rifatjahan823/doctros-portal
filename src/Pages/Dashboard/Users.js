@@ -5,7 +5,7 @@ import UserRow from './UserRow';
 
 const Users = () => {
       //use react query
-      const {data:users,isLoading,refetch}=useQuery(['available'],()=>  fetch(`http://localhost:5000/user`,{
+      const {data:users,isLoading,refetch}=useQuery(['available'],()=>  fetch(`https://tranquil-wildwood-93962.herokuapp.com/user`,{
          method:"GET",
          headers:{
              authorization:`Bearer ${localStorage.getItem('accessToken')}`

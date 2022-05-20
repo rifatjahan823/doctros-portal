@@ -23,7 +23,7 @@ const BookingModal = ({treatment,selected,setTreatment,refetch}) => {
             price,
             phone: event.target.phone.value,
         }
-        fetch('http://localhost:5000/booking',{
+        fetch('https://tranquil-wildwood-93962.herokuapp.com/booking',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

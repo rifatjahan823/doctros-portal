@@ -10,7 +10,7 @@ const CheckoutForm = ({payments}) => {
 
     const {price,patientEmail,patientName}=payments
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://tranquil-wildwood-93962.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

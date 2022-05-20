@@ -9,7 +9,7 @@ const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 
 const Payment = () => {
     const {id}=useParams();
-    const url =`http://localhost:5000/booking/${id}`;
+    const url =`https://tranquil-wildwood-93962.herokuapp.com/booking/${id}`;
     const {data:payments,isLoading}=useQuery(['payment',id],()=>fetch(url,{
         method:"GET",
         headers:{
