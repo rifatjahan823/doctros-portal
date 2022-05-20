@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const BookingModal = ({treatment,selected,setTreatment,refetch}) => {
-    const {name,slots,_id}=treatment
+    const {name,slots,_id,price}=treatment
     const [user, loading, error] = useAuthState(auth);
     const formateDate = format(selected, 'PP')
     const handebooking = event=>{
@@ -20,6 +20,7 @@ const BookingModal = ({treatment,selected,setTreatment,refetch}) => {
             slot,
             patientEmail:user.email,
             patientName:user.displayName,
+            price,
             phone: event.target.phone.value,
         }
         fetch('http://localhost:5000/booking',{
